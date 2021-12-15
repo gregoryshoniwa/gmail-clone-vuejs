@@ -5,23 +5,23 @@ const routes = [
   {
     path: '/',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
     path: '/signup',
     name: 'Signup',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
+    component: () => import(/* webpackChunkName: "signup" */ '../views/Signup.vue')
   },
   {
     path: '/home',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   
   {
     path: '/forgot',
     name: 'Forgot',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Forgot.vue')
+    component: () => import(/* webpackChunkName: "forgot" */ '../views/Forgot.vue')
   }
 ]
 

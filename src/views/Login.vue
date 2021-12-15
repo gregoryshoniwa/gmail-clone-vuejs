@@ -2,17 +2,17 @@
   <div class="home">
       <div class="container">
           <div class="inner-container">
-                <img alt="Google logo" src="@/assets/logo.png">
+                <img class="logo" alt="Google logo" src="@/assets/logo.png">
                 <div class="signin-text">Sign In</div>
-                <div class="signin-text-continue">to continue to gmail</div>
+                <div class="signin-text-continue">to continue to Gmail</div>
                 <el-input class="email" v-model="email" placeholder="Email or Phone Number" clearable />
                 <el-input class="password" v-model="password" placeholder="Password" show-password />
-                <div class="forgot-email">Forgot email?</div>
+                <div @click="forgot" class="forgot-email">Forgot email?</div>
                 <div class="not-your-computer">Not your computer? Use guest mode to signin privately.</div>
                 <div class="learn-more">Learn more</div>
                 <div class="button-container">
-                    <el-button class="create-account-button" type="text">Create Account</el-button>
-                    <el-button class="login-button" type="primary">Login</el-button>
+                    <el-button @click="createAccount" class="create-account-button" type="text">Create Account</el-button>
+                    <el-button @click="login" class="login-button" type="primary">Login</el-button>
                 </div>
                 
             </div>
@@ -30,12 +30,23 @@ export default {
           email: '',
           password: '',
       }
+  },
+  methods:{
+      createAccount(){
+          this.$router.push('/signup');
+      },
+      login(){
+           this.$router.push('/home');
+      },
+      forgot(){
+           this.$router.push('/forgot');
+      }
   }
 }
 </script>
 <style scoped>
-    img{
-        width:120px;
+    .logo{
+        width:80px;
         height:auto
     }
     .home {
@@ -60,7 +71,7 @@ export default {
     }
 
     .signin-text{
-         
+         margin-top: 15px;
          font-size: 25px;
     }
     .signin-text-continue{
@@ -85,6 +96,7 @@ export default {
     }
     .learn-more{
         color: rgb(105, 108, 255);
+        margin-top: 5px;
         margin-bottom: 30px;
         display: flex;
         cursor: pointer;
