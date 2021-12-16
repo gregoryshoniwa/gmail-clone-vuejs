@@ -37,7 +37,7 @@
       </div>
       <div v-if="!toggle">
         <div style="margin-bottom:10px;">
-          <mdicon class="item-icon" name="video-outline" width="20" height="20" />
+          <mdicon class="item-icon" name="video-check-outline" width="20" height="20" />
         </div>
         <el-scrollbar max-height="350px">
           <div v-for="item in meetingItems" :key="item.id">

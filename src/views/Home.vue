@@ -8,11 +8,11 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="4">
+      <el-col :span="menuCol">
         <!-- Left Meun Bar -->
         <Menu :toggle="toggler" />
       </el-col>
-      <el-col :span="20">
+      <el-col :span="contentCol">
         <!-- Content Area -->
         <Content />
       </el-col>
@@ -34,12 +34,21 @@ export default {
   },
   data(){
     return {
-      toggler: true
+      toggler: true,
+      menuCol:4,
+      contentCol:20
     }
   },
   methods:{
     toggleMenu(){
       this.toggler = !this.toggler
+      if(this.toggler){
+        this.menuCol = 4
+        this.contentCol = 20
+      }else{
+          this.menuCol = 1
+          this.contentCol = 23
+      }
     }
   }
  
