@@ -15,7 +15,7 @@
       <div v-if="toggle">
         <el-scrollbar max-height="350px">
           <div v-for="item in meunItems" :key="item.id">
-            <ListItems :icon="item.icon" :item="item.item" />
+            <ListItems :class="{active : selectedItem == item.item}" @click="selectedItem = item.item" :icon="item.icon" :item="item.item" />
           </div>
         </el-scrollbar>
       </div>
@@ -64,6 +64,7 @@ export default {
       return{
         count: 13,
         blank:'',
+        selectedItem:'Inbox',
         meunItems:[
           {id:1,icon:'inbox',item: 'Inbox'},
           {id:2,icon:'star',item: 'Starred'},
@@ -77,7 +78,13 @@ export default {
           {id:10,icon:'email',item: 'All Mail'},
           {id:11,icon:'alert-circle',item: 'Spam'},
           {id:12,icon:'cog-outline',item: 'Manage labels'},
-          {id:13,icon:'plus',item: 'Create labels'}
+          {id:13,icon:'plus',item: 'Create labels'},
+          {id:14,icon:'delete',item: 'Trash Mail'},
+          {id:15,icon:'alert-octagon',item: 'Spam Check'},
+          {id:16,icon:'cog-outline',item: 'Manage Settings'},
+          {id:17,icon:'plus',item: 'Add Contacts'},
+          {id:18,icon:'account',item: 'Contacts List'},
+
         ],
         meetingItems:[
           {id:1,icon:'video',item: 'New Meeting'},
@@ -91,6 +98,16 @@ export default {
 </script>
 
 <style scoped>
+.active{
+         
+         color : rgb(223, 31, 31) !important;
+         background-color: rgb(253, 234, 234);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        cursor: pointer;
+        width: 90%;
+         
+    }
 .item-icon {
         margin: 5px;
         padding-left: 15px;

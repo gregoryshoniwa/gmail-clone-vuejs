@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style scoped>
+
     .item-icon {
         margin: 5px;
         padding-left: 15px;

@@ -131,11 +131,13 @@ export default {
       cursor: pointer;
       width : 50px;
       height : 50px;
+      margin-left: 15px;
       
   }
   .menu-button:hover {
     cursor: pointer;
 	background-color: rgba(233, 233, 233, 0.8);
+    margin-left: 15px;
 	
 }
   .menu-button-right{
@@ -144,8 +146,7 @@ export default {
       border :#eee;
       background-color: #fff;
       cursor: pointer;
-      width : 40px;
-      height : 40px;
+      
       margin-left: 8px;
       margin-right: 7px;
   }
@@ -160,8 +161,10 @@ export default {
       border: #fff solid 2px;
       background-color: #fff;
       cursor: pointer;
-      width : 35px;
-      height : 35px;
+      
+      width: 35px;
+      height: 35px;
+      
      
 
 }
@@ -169,19 +172,20 @@ export default {
     cursor: pointer;
 	background-color: rgba(233, 233, 233, 0.8);
     border: rgb(189, 189, 189) solid 2px;
+    
 }
   .logo{
         width:110px;
         height:25px;
-        padding-left: 5px;
-        padding-top:13px;
+        padding-left: 8px;
+        padding-top:17px;
     }
 
    .left-side{
        display: flex;
        align-content: center;
        justify-content:left;
-       padding: 6.5px 6.5px 6.5px 10px;
+       
    }
    .right-side{
        display: flex;
