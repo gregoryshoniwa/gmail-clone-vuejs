@@ -5,8 +5,8 @@
                 <img class="logo" alt="Google logo" src="@/assets/logo.png">
                 <div class="signin-text">Sign In</div>
                 <div class="signin-text-continue">to continue to Gmail</div>
-                <el-input class="email" v-model="email" placeholder="Email or Phone Number" clearable />
-                <el-input class="password" v-model="password" placeholder="Password" show-password />
+                <el-input class="email" v-model="loginData.email" placeholder="Email or Phone Number" clearable />
+                <el-input class="password" v-model="loginData.password" placeholder="Password" show-password />
                 <div @click="forgot" class="forgot-email">Forgot email?</div>
                 <div class="not-your-computer">Not your computer? Use guest mode to signin privately.</div>
                 <div class="learn-more">Learn more</div>
@@ -24,11 +24,14 @@
 
 
 export default {
-  name: 'Home',
+  name: 'Login',
   data(){
       return{
-          email: '',
-          password: '',
+          loginData:{
+               email: '',
+               password: '',
+          }
+         
       }
   },
   methods:{

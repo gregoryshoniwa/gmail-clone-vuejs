@@ -8,12 +8,12 @@
                         <div class="signin-text">Create you Google Account</div>
                         <div class="signin-text-continue">to continue to Gmail</div>
                         <el-row :gutter="20">
-                            <el-col :span="12"><el-input class="text-input" v-model="firstName" placeholder="First Name" clearable /></el-col>
-                            <el-col :span="12"><el-input class="text-input" v-model="lastName" placeholder="Last Name" clearable /></el-col>
+                            <el-col :span="12"><el-input class="text-input" v-model="signupData.firstName" placeholder="First Name" clearable /></el-col>
+                            <el-col :span="12"><el-input class="text-input" v-model="signupData.lastName" placeholder="Last Name" clearable /></el-col>
                         </el-row>
                         <el-row :gutter="20">
                             <el-col :span="24">
-                                <el-input class="text-input" v-model="username" placeholder="User Name" clearable >
+                                <el-input class="text-input" v-model="signupData.userName" placeholder="User Name" clearable >
                                     <template #append>gmail.com</template>
                                 </el-input>
                                 <div class="bottom-input-text">You can use letter, numbers & periods</div>
@@ -21,8 +21,8 @@
 
                         </el-row>
                         <el-row :gutter="20">
-                            <el-col :span="12"><el-input class="text-input" v-model="password" placeholder="Password" show-password /></el-col>
-                            <el-col :span="12"><el-input class="text-input" v-model="confirm" placeholder="Confirm" show-password /></el-col>
+                            <el-col :span="12"><el-input class="text-input" v-model="signupData.password" placeholder="Password" show-password /></el-col>
+                            <el-col :span="12"><el-input class="text-input" v-model="signupData.confirm" placeholder="Confirm" show-password /></el-col>
                             <div class="bottom-input-text-two">Use 8 or more characters with a mix of letter, numbers & symbols</div>
                         </el-row>
                         
@@ -56,8 +56,13 @@ export default {
   name: 'Signup',
   data(){
       return{
-          email: '',
-          password: '',
+          signupData:{
+              firstName:'',
+              lastName:'',
+              userName: '',
+              password: '',
+              confirm: '',
+          }
       }
   },
   methods:{
