@@ -3,20 +3,20 @@
       <el-scrollbar max-height="640px">
           <div class="email-tabs">
                 <div class="tab" :class="{active : selectedTab == 'Primary'}" @click="selectedTab = 'Primary'">
-                    <mdicon class="item-icon" name="inbox" width="20" height="20" />
-                    <div class="item-text">Primary</div>
+                    <mdicon class="item-icon"  name="inbox" width="20" height="20" />
+                    <div class="item-text" >Primary</div>
                 </div>
-                 <div class="tab" :class="{active : selectedTab == 'Social'}" @click="selectedTab = 'Social'">
-                    <mdicon class="item-icon" name="account-supervisor" width="20" height="20" />
-                    <div class="item-text">Social</div>
+                 <div class="tab" :class="{active2 : selectedTab == 'Social'}" @click="selectedTab = 'Social'">
+                    <mdicon class="item-icon"  name="account-supervisor" width="20" height="20" />
+                    <div class="item-text" >Social</div>
                 </div>
-                 <div class="tab" :class="{active : selectedTab == 'Promotions'}" @click="selectedTab = 'Promotions'">
-                    <mdicon class="item-icon" name="ticket" width="20" height="20" />
-                    <div class="item-text">Promotions</div>
+                 <div class="tab" :class="{active3 : selectedTab == 'Promotions'}" @click="selectedTab = 'Promotions'">
+                    <mdicon class="item-icon"  name="ticket" width="20" height="20" />
+                    <div class="item-text" >Promotions</div>
                 </div>
-                 <div class="tab" :class="{active : selectedTab == 'Updates'}" @click="selectedTab = 'Updates'">
-                    <mdicon class="item-icon" name="alert-circle" width="20" height="20" />
-                    <div class="item-text">Updates</div>
+                 <div class="tab" :class="{active4 : selectedTab == 'Updates'}" @click="selectedTab = 'Updates'">
+                    <mdicon class="item-icon"  name="alert-circle" width="20" height="20" />
+                    <div class="item-text" >Updates</div>
                 </div>
           </div>
           <div v-for="(item,i) in emailData" :key="i">
@@ -151,14 +151,27 @@ export default {
 
     }
     .active{
-         
-         border-bottom: 3px solid rgb(223, 31, 31) !important;
-         
-         
+         color: rgb(223, 31, 31) !important;
+         border-bottom: 3px solid rgb(223, 31, 31) !important;   
     }
+    .active2{
+         color: rgb(31, 82, 223) !important;
+         border-bottom: 3px solid rgb(31, 82, 223) !important;   
+    }
+    .active3{
+         color: rgb(7, 185, 7) !important;
+         border-bottom: 3px solid rgb(7, 185, 7) !important;   
+    }
+    .active4{
+         color: rgb(227,116,0)  !important;
+         border-bottom: 3px solid rgb(227,116,0) !important;   
+    }
+    
     .email-tabs{
         display: flex;
         border-bottom: 1px solid #eee;
+        
+        
     }
     .tab{
         display: flex;
@@ -176,7 +189,7 @@ export default {
         align-items: center;
         width: 240px;
         padding: 18px;
-
+        cursor: pointer;
         background-color: #eee;
         cursor: pointer;
         color:rgb(51, 51, 51);

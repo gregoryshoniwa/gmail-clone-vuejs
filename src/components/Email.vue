@@ -1,43 +1,48 @@
 <template>
-  <div class="email">
-      <div class="email-buttons">
-          <el-tooltip
-                    class="item"
-                    effect="dark"
-                    content="Select"
-                    placement="bottom"
-                >
-                    <button class="button-check-box">
-                        <el-checkbox  v-model="checked1" ></el-checkbox>
-                   </button>
-            </el-tooltip>
-            <el-tooltip
-                    class="item"
-                    effect="dark"
-                    content="Refresh"
-                    placement="bottom"
-                >
-                    <button class="button">
-                        <mdicon class="item-icon" name="star-outline" width="20" height="20" />
+  <div >
+         
+            <el-row class="email">
+                <el-col :span="3">
+                    <div class="email-buttons">
+       
+                        <el-tooltip
+                            class="item"
+                            effect="dark"
+                            content="Select"
+                            placement="bottom"
+                        >
+                        <button class="button-check-box">
+                            <el-checkbox  v-model="checked1" ></el-checkbox>
                     </button>
-            </el-tooltip>
-            <el-tooltip
-                    class="item"
-                    effect="dark"
-                    content="More"
-                    placement="bottom"
-                >
-                    <button class="button">
-                        <mdicon class="item-icon-label" name="label" width="20" height="20" />
-                    </button>
-            </el-tooltip>
-      </div>
-      <div class="sender-name">{{senderName}}</div>
-      <div class="messageSummary">
-          <div>{{messageSummary}}</div>
-          <div class="date">{{date}}</div>
-      </div>
+                        </el-tooltip>
+                        <el-tooltip
+                                class="item"
+                                effect="dark"
+                                content="Refresh"
+                                placement="bottom"
+                            >
+                                <button class="button">
+                                    <mdicon class="item-icon" name="star-outline" width="20" height="20" />
+                                </button>
+                        </el-tooltip>
+                        <el-tooltip
+                                class="item"
+                                effect="dark"
+                                content="More"
+                                placement="bottom"
+                            >
+                                <button class="button">
+                                    <mdicon class="item-icon-label" name="label" width="20" height="20" />
+                                </button>
+                        </el-tooltip>
+                </div>
+                </el-col>
+                <el-col :span="3"><div class="sender-name">{{senderName}}</div></el-col>
+                <el-col :span="13"><div class="messageSummary">{{messageSummary}}</div></el-col>
+                <el-col :span="5"><div class="date">{{date}}</div></el-col>
+            </el-row>
       
+
   </div>
 </template>
 
@@ -60,17 +65,21 @@ export default {
 
 <style scoped>
     .date{
-
+     text-align:right;
+     padding-right: 20px;
+     color: rgb(78, 78, 78);
     }
     .messageSummary{
-        display: flex;
-        justify-content: left;
+        
+      
+        
     }
     .sender-name{
-        margin-right: 120px;
+        
     }
     .email{
-        display:flex;
+        display: flex;
+        justify-content: space-between;
         background-color:rgb(247, 247, 247);
         border-bottom:1px solid #eee;
         align-items: center;
@@ -79,7 +88,10 @@ export default {
         cursor: pointer;
     }
     .email:hover{
-        box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+        /* border-top:1px solid rgba(131, 131, 131, 0.699);
+        border-left:1px solid rgba(131, 131, 131, 0.671);
+        border-bottom:2px solid rgba(92, 92, 92, 0.514); */
+        box-shadow: inset 0 0 3px 0 grey;
     }
     .email-buttons{
         margin-left: 5px;
@@ -91,6 +103,8 @@ export default {
       padding-bottom: 10px;
       padding-right: 10px;
       padding-left: 10px;
+      margin-top: 2px;
+      margin-bottom: 2px;
       text-align:center;
       border :#eee;
       background-color:rgb(247, 247, 247);
